@@ -1,4 +1,4 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.views;
 
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -10,6 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.icon.nsales.icontranslate.models.Phrase;
+import com.icon.nsales.icontranslate.R;
+import com.icon.nsales.icontranslate.adapters.GridViewAdapter;
+import com.icon.nsales.icontranslate.app.MyApplication;
+import com.icon.nsales.icontranslate.services.ContextService;
+import com.icon.nsales.icontranslate.services.DataService;
 
 import java.util.ArrayList;
 

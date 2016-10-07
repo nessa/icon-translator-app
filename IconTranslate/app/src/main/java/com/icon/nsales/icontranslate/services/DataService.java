@@ -1,8 +1,8 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.services;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.support.annotation.NonNull;
+
+import com.icon.nsales.icontranslate.models.Phrase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,7 +10,6 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Locale;
 
 /**
  * Created by nsales on 5/10/16.

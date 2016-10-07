@@ -1,10 +1,13 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.views;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
+
+import com.icon.nsales.icontranslate.R;
+import com.icon.nsales.icontranslate.adapters.LanguagesListAdapter;
 
 import java.util.ArrayList;
 

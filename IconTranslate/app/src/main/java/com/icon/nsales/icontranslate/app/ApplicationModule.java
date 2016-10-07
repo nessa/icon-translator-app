@@ -1,7 +1,10 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.app;
 
 import android.app.Application;
 import android.content.Context;
+
+import com.icon.nsales.icontranslate.services.ContextService;
+import com.icon.nsales.icontranslate.services.DataService;
 
 import javax.inject.Singleton;
 

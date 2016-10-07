@@ -1,4 +1,4 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.icon.nsales.icontranslate.views.MainActivity;
+import com.icon.nsales.icontranslate.models.Phrase;
+import com.icon.nsales.icontranslate.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

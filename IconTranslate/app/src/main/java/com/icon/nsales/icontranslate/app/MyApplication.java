@@ -1,6 +1,10 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.app;
 
 import android.app.Application;
+
+import com.icon.nsales.icontranslate.app.DaggerApplicationComponent;
+import com.icon.nsales.icontranslate.app.ApplicationComponent;
+import com.icon.nsales.icontranslate.app.ApplicationModule;
 
 /**
  * Created by nsales on 7/10/16.

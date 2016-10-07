@@ -1,4 +1,4 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.services;
 
 import android.content.Context;
 import android.content.res.Configuration;

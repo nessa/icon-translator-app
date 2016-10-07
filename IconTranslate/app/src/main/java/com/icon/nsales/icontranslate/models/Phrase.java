@@ -1,4 +1,4 @@
-package com.icon.nsales.icontranslate;
+package com.icon.nsales.icontranslate.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> languages;
 
     private GridViewAdapter gridViewAdapter;
+    private LanguagesDialog languagesDialog;
 
+    private String selectedLanguage;
     private int lastCategoryIndex;
 
     @BindView(R.id.main_toolbar)
@@ -86,20 +88,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.language:
+                languagesDialog = new LanguagesDialog(this, languages);
+                languagesDialog.show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         Log.d("MAIN", "ON PREPARE");
 
         return super.onPrepareOptionsMenu(menu);
     }
 
-    private void updateMenuTitles() {
-        Log.d("MAIN", "UPDATE");
-        MenuItem languageItem = menu.findItem(R.id.language);
-        languageItem.setTitle("ES");
-    }
-
     public int getLastCategoryIndex() {
         return lastCategoryIndex;
+    }
+
+    public String getSelectedLanguage() {
+        return selectedLanguage;
+    }
+
+
+    public void setLanguage(String language) {
+        if (!language.equals(selectedLanguage)) {
+            selectedLanguage = language;
+
+            MenuItem languageItem = menu.findItem(R.id.language);
+            languageItem.setTitle(selectedLanguage);
+        }
+
+        if (languagesDialog != null) {
+            languagesDialog.dismiss();
+        }
     }
 
     public void filterPhrases(int categoryIndex) {

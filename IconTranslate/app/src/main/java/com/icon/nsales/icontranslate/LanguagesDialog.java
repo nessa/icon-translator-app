@@ -41,7 +41,7 @@ public class LanguagesDialog extends Dialog {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(context);
         languagesList.setLayoutManager(mLayoutManager);
 
-        adapter = new LanguagesListAdapter(context, languages);
+        adapter = new LanguagesListAdapter(context);
         languagesList.setAdapter(adapter);
     }
 

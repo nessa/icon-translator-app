@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -17,12 +15,7 @@ import butterknife.ButterKnife;
  */
 public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-
     private MainActivity context;
-
-    private ArrayList<String> languages;
-    private ArrayList<String> translatedLanguages;
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         View view;
@@ -37,15 +30,9 @@ public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.View
         }
     }
 
-    public LanguagesListAdapter(Context context, ArrayList<String> languages) {
+    public LanguagesListAdapter(Context context) {
         this.context = (MainActivity) context;
-        this.languages = languages;
-        this.translatedLanguages = new ArrayList<>();
-
-        for (int i = 0; i < this.languages.size(); i++) {
-            this.translatedLanguages.add(DataManagement.getLanguageString(this.languages.get(i),
-                this.context));
-        }
+        this.context.calcTranslatedLanguages();
     }
 
     @Override
@@ -73,13 +60,14 @@ public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemCount() {
-        return this.languages.size();
+        return context.getLanguages().size();
     }
 
     public String getLanguage(int position) {
-        return this.languages.get(position);
+        return context.getLanguages().get(position);
     }
+
     public String getTranslatedLanguage(int position) {
-        return this.translatedLanguages.get(position);
+        return context.getTranslatedLanguages().get(position);
     }
 }

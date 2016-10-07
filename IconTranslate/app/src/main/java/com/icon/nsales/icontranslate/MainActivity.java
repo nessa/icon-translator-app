@@ -7,20 +7,25 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ArrayList<Phrase> phrases;
     private ArrayList<String> categories;
     private ArrayList<String> languages;
+
+    private ArrayList<String> translatedCategories;
+    private ArrayList<String> translatedLanguages;
 
     private GridViewAdapter gridViewAdapter;
     private LanguagesDialog languagesDialog;
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.grid_view)
     RecyclerView gridView;
 
+    @Inject
+    DataService dataService;
+    @Inject
+    ContextService contextService;
+
     private Menu menu;
 
     @Override
@@ -43,14 +53,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.setDebug(true);
         ButterKnife.bind(this);
+        ((MyApplication) getApplication()).getComponent().inject(this);
 
         toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
 
         // Get data
-        DataManagement.loadPhrases(this);
-        categories = DataManagement.getCategories();
-        languages = DataManagement.getLanguages(this);
+        dataService.loadPhrases(this);
+        categories = dataService.getCategories();
+        languages = dataService.getLanguages(this);
 
         selectedLanguage = languages.get(0);
         lastCategoryIndex = 0;
@@ -69,15 +80,13 @@ public class MainActivity extends AppCompatActivity {
         });
         gridView.setLayoutManager(mLayoutManager);
 
-        ArrayList<Phrase> phrases = DataManagement.getPhrases(categories.get(lastCategoryIndex));
-        gridViewAdapter = new GridViewAdapter(this, phrases, categories);
+        phrases = dataService.getPhrases(categories.get(lastCategoryIndex));
+        gridViewAdapter = new GridViewAdapter(this);
         gridView.setAdapter(gridViewAdapter);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        Log.d("MAIN", "ON CREATE");
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
 
@@ -110,6 +119,43 @@ public class MainActivity extends AppCompatActivity {
         return lastCategoryIndex;
     }
 
+    public ArrayList<Phrase> getPhrases() {
+        return this.phrases;
+    }
+
+    public ArrayList<String> getCategories() {
+        return this.categories;
+    }
+
+    public ArrayList<String> getLanguages() {
+        return this.languages;
+    }
+
+    public ArrayList<String> getTranslatedCategories() {
+        return this.translatedCategories;
+    }
+
+    public ArrayList<String> getTranslatedLanguages() {
+        return this.translatedLanguages;
+    }
+
+    public void calcTranslatedLanguages() {
+        this.translatedLanguages = new ArrayList<>();
+
+        for (int i = 0; i < this.languages.size(); i++) {
+            this.translatedLanguages.add(contextService.getLanguageString(this.languages.get(i),
+                this));
+        }
+    }
+
+    public void calcTranslatedCategories() {
+        this.translatedCategories = new ArrayList<>();
+
+        for (int i = 0; i < this.categories.size(); i++) {
+            this.translatedCategories.add(contextService.getCategoryString(this.categories.get(i),
+                this));
+        }
+    }
 
     public void setLanguage(String language) {
         if (!language.equals(selectedLanguage)) {
@@ -126,9 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void filterPhrases(int categoryIndex) {
         if (categoryIndex != lastCategoryIndex) {
-            ArrayList<Phrase> phrases = DataManagement.getPhrases(categories.get(categoryIndex));
-
-            gridViewAdapter.setPhrases(phrases);
+            phrases = dataService.getPhrases(categories.get(categoryIndex));
             gridViewAdapter.notifyDataSetChanged();
 
             lastCategoryIndex = categoryIndex;
@@ -136,13 +180,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showPhrase(String phraseCode) {
-        Snackbar.make(layout, DataManagement.getPhraseString(phraseCode, this),
+        Snackbar.make(layout, contextService.getPhraseString(phraseCode, this),
             Snackbar.LENGTH_LONG)
             .show();
     }
 
     public void speakPhrase(String phraseCode) {
-        Snackbar.make(layout, DataManagement.getPhraseStringByLanguage(phraseCode, this, selectedLanguage),
+        // TODO: Use TTS to speak
+        Snackbar.make(layout, contextService.getPhraseStringByLanguage(phraseCode, this, selectedLanguage),
             Snackbar.LENGTH_LONG)
             .show();
     }

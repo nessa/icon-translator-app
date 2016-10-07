@@ -11,8 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -25,10 +23,6 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int TYPE_ITEM = 1;
 
     private MainActivity context;
-
-    private ArrayList<Phrase> phrases;
-    private ArrayList<String> categories;
-    private ArrayList<String> translatedCategories;
 
     public class VHHeader extends RecyclerView.ViewHolder {
         @BindView(R.id.categories_spinner)
@@ -50,25 +44,14 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-    public GridViewAdapter(Context context, ArrayList<Phrase> phrases, ArrayList<String> categories) {
+    public GridViewAdapter(Context context) {
         this.context = (MainActivity) context;
-        this.phrases = phrases;
-        this.categories = categories;
-        this.translatedCategories = new ArrayList<>();
-
-        for (int i = 0; i < this.categories.size(); i++) {
-            this.translatedCategories.add(DataManagement.getCategoryString(this.categories.get(i),
-                this.context));
-        }
-    }
-
-    public void setPhrases(ArrayList<Phrase> phrases) {
-        this.phrases = phrases;
+        this.context.calcTranslatedCategories();
     }
 
     @Override
     public int getItemCount() {
-        return this.phrases.size() + 1;
+        return this.context.getPhrases().size() + 1;
     }
 
     @Override
@@ -85,12 +68,12 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public Phrase getItem(int position) {
-        return this.phrases.get(position - 1);
+        return this.context.getPhrases().get(position - 1);
     }
 
     @Override
     public long getItemId(int position) {
-        return this.phrases.get(position - 1).getSortNumber();
+        return this.context.getPhrases().get(position - 1).getSortNumber();
     }
 
 
@@ -122,7 +105,6 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             itemHolder.icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("GRID", "ON CLICK " + view.getTag());
                     context.speakPhrase((String) view.getTag());
                 }
             });
@@ -130,7 +112,6 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             itemHolder.icon.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    Log.d("GRID", "ON LONG CLICK" + view.getTag());
                     context.showPhrase((String) view.getTag());
                     return true;
                 }
@@ -139,7 +120,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             final VHHeader headerHolder = (VHHeader) holder;
 
             final ArrayAdapter<String> languagesArrayAdapter = new ArrayAdapter<>(context,
-                android.R.layout.simple_spinner_item, translatedCategories);
+                android.R.layout.simple_spinner_item, context.getTranslatedCategories());
             languagesArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             headerHolder.spinner.setAdapter(languagesArrayAdapter);
             headerHolder.spinner.setSelection(context.getLastCategoryIndex(), false);
@@ -147,7 +128,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             headerHolder.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    Log.d("GRID", "SELECT CATEGORY " + categories.get(position));
+                    Log.d("GRID", "SELECT CATEGORY " + context.getCategories().get(position));
                     headerHolder.spinner.setSelection(position);
                     context.filterPhrases(position);
                 }

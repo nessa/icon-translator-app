@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 public class LanguagesDialog extends Dialog {
 
     // UI elements
-    protected RecyclerView list;
     protected LanguagesListAdapter adapter;
 
     @BindView(R.id.languages_list)
@@ -29,14 +28,12 @@ public class LanguagesDialog extends Dialog {
      * @param context Application context
      */
     public LanguagesDialog(final Context context, ArrayList<String> languages) {
-        // Set your theme here
         super(context);
 
-        //this.getWindow().setWindowAnimations(R.style.UpAndDownDialogAnimation);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.setContentView(R.layout.dialog_languages);
-        this.setCancelable(false);
-        this.setCanceledOnTouchOutside(false);
+        this.setCancelable(true);
+        this.setCanceledOnTouchOutside(true);
 
         ButterKnife.bind(this);
 

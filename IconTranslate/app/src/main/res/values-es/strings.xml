@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Traducción de iconos</string>
+
+    <!-- Languages -->
+    <string name="language_en">Inglés</string>
+    <string name="language_es">Español</string>
+
+    <!-- Categories -->
+    <string name="category_all">Todas las categorías</string>
+    <string name="category_basic">Conversación básica</string>
+    <string name="category_survival">Supervivencia</string>
+
+    <!-- Phrases -->
+    <string name="phrase_thanks">Muchas gracias</string>
+    <string name="phrase_welcome">De nada</string>
+    <string name="phrase_hello">Hola</string>
+    <string name="phrase_goodbye">Adiós</string>
+    <string name="phrase_like">Me gusta</string>
+    <string name="phrase_dont_like">No me gusta</string>
+    <string name="phrase_love">Me encanta</string>
+    <string name="phrase_go">Vamos</string>
+    <string name="phrase_eat">¿Dónde puedo comer?</string>
+    <string name="phrase_sleep">¿Dónde puedo dormir?</string>
+
+</resources>

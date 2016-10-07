@@ -1,5 +1,7 @@
 package com.icon.nsales.icontranslate;
 
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private String selectedLanguage;
     private int lastCategoryIndex;
 
+    @BindView(R.id.coordinator_layout)
+    CoordinatorLayout layout;
     @BindView(R.id.main_toolbar)
     Toolbar toolbar;
     @BindView(R.id.grid_view)
@@ -48,15 +52,13 @@ public class MainActivity extends AppCompatActivity {
         categories = DataManagement.getCategories();
         languages = DataManagement.getLanguages(this);
 
+        selectedLanguage = languages.get(0);
         lastCategoryIndex = 0;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        // TODO: Fill grid view
-
 
         GridLayoutManager mLayoutManager = new GridLayoutManager(this, 4);
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Create your menu...
         MenuItem languageItem = menu.findItem(R.id.language);
-        languageItem.setTitle("EN");
+        languageItem.setTitle(selectedLanguage);
 
         this.menu = menu;
         return super.onCreateOptionsMenu(menu);
@@ -101,17 +103,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        Log.d("MAIN", "ON PREPARE");
-
         return super.onPrepareOptionsMenu(menu);
     }
 
     public int getLastCategoryIndex() {
         return lastCategoryIndex;
-    }
-
-    public String getSelectedLanguage() {
-        return selectedLanguage;
     }
 
 
@@ -130,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void filterPhrases(int categoryIndex) {
         if (categoryIndex != lastCategoryIndex) {
-            Log.d("MAIN", "Filter by " + categories.get(categoryIndex));
             ArrayList<Phrase> phrases = DataManagement.getPhrases(categories.get(categoryIndex));
 
             gridViewAdapter.setPhrases(phrases);
@@ -138,6 +133,18 @@ public class MainActivity extends AppCompatActivity {
 
             lastCategoryIndex = categoryIndex;
         }
+    }
+
+    public void showPhrase(String phraseCode) {
+        Snackbar.make(layout, DataManagement.getPhraseString(phraseCode, this),
+            Snackbar.LENGTH_LONG)
+            .show();
+    }
+
+    public void speakPhrase(String phraseCode) {
+        Snackbar.make(layout, DataManagement.getPhraseStringByLanguage(phraseCode, this, selectedLanguage),
+            Snackbar.LENGTH_LONG)
+            .show();
     }
 
 }

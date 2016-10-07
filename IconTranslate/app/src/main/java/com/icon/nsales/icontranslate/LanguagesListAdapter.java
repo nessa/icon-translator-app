@@ -2,7 +2,6 @@ package com.icon.nsales.icontranslate;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,7 @@ public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ViewHolder itemHolder = (ViewHolder) holder;
+        final ViewHolder itemHolder = (ViewHolder) holder;
 
         itemHolder.language.setText(getTranslatedLanguage(position));
 
@@ -66,10 +65,8 @@ public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.View
         itemHolder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Log.d("LIST", "ON CLICK " + view.getTag());
+                itemHolder.view.setSelected(true);
                 context.setLanguage((String) view.getTag());
-
             }
         });
     }

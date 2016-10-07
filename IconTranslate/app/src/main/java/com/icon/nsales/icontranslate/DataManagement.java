@@ -5,6 +5,7 @@ import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
@@ -79,10 +80,6 @@ public class DataManagement {
                 }
             }
         }
-        Log.d("DATA", "PHRASES COUNT "+ mPhrases.size());
-        for(Phrase p: mPhrases) {
-            Log.d("MAIN", "PHRASE "+p.getCode());
-        }
     }
 
     public static ArrayList<Phrase> getPhrases(String category) {
@@ -129,10 +126,6 @@ public class DataManagement {
 
 
     public static ArrayList<String> getCategories() {
-        Log.d("DATA", "PHRASES COUNT2 "+ mPhrases.size());
-        for(Phrase p: mPhrases) {
-            Log.d("MAIN", "PHRASE "+p.getCode());
-        }
         return mCategories;
     }
 
@@ -142,26 +135,22 @@ public class DataManagement {
         return context.getResources().getIdentifier(aString, "drawable", packageName);
     }
 
-    public static String getStringResourceByName(String aString, Context context) {
+    protected static String getStringResourceByName(String aString, Context context) {
         String packageName = context.getPackageName();
         int resId = context.getResources().getIdentifier(aString, "string", packageName);
         return context.getString(resId);
     }
 
-    public static String getStringResourceByName(String aString, Context context, String locale) {
-        String packageName = context.getPackageName();
+    @NonNull
+    protected static String getStringResourceByName(String aString, Context context, String locale) {
+        Configuration configuration = new Configuration(context.getResources().getConfiguration());
+        configuration.setLocale(new Locale(locale));
 
-        Configuration conf = context.getResources().getConfiguration();
-        conf.locale = new Locale(locale);
-        DisplayMetrics metrics = new DisplayMetrics();
+        Context conf = context.createConfigurationContext(configuration);
+        String packageName = conf.getPackageName();
 
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-        Resources resources = new Resources(context.getAssets(), metrics, conf);
-
-        int resId = resources.getIdentifier(aString, "string", packageName);
-        /* get localized string */
-        return resources.getString(resId);
+        int resId = conf.getResources().getIdentifier(aString, "string", packageName);
+        return conf.getResources().getString(resId);
     }
 
     public static String getCategoryString(String category, Context context) {
@@ -173,7 +162,11 @@ public class DataManagement {
     }
 
     public static String getPhraseString(String category, Context context) {
-        return getStringResourceByName(LANGUAGE_PREFIX + category, context);
+        return getStringResourceByName(PHRASE_PREFIX + category, context);
+    }
+
+    public static String getPhraseStringByLanguage(String category, Context context, String locale) {
+        return getStringResourceByName(PHRASE_PREFIX + category, context, locale);
     }
 
 }

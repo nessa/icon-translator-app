@@ -122,8 +122,8 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             itemHolder.icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Log.d("GRID", "ON CLICK " + view.getTag());
+                    context.speakPhrase((String) view.getTag());
                 }
             });
 
@@ -131,6 +131,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 @Override
                 public boolean onLongClick(View view) {
                     Log.d("GRID", "ON LONG CLICK" + view.getTag());
+                    context.showPhrase((String) view.getTag());
                     return true;
                 }
             });

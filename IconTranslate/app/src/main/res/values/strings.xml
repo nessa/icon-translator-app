@@ -2,24 +2,24 @@
     <string name="app_name">IconTranslate</string>
 
     <!-- Languages -->
-    <string name="language_en">Inglés</string>
-    <string name="language_es">Español</string>
+    <string name="language_en">English</string>
+    <string name="language_es">Spanish</string>
 
     <!-- Categories -->
-    <string name="category_all">Todas las categorías</string>
-    <string name="category_basic">Conversación básica</string>
-    <string name="category_survival">Supervivencia</string>
+    <string name="category_all">All categories</string>
+    <string name="category_basic">Basic conversation</string>
+    <string name="category_survival">Survival</string>
 
     <!-- Phrases -->
-    <string name="phrase_thanks">Muchas gracias</string>
-    <string name="phrase_welcome">De nada</string>
-    <string name="phrase_hello">Hola</string>
-    <string name="phrase_goodbye">Adiós</string>
-    <string name="phrase_like">Me gusta</string>
-    <string name="phrase_dont_like">No me gusta</string>
-    <string name="phrase_love">Me encanta</string>
-    <string name="phrase_go">Vamos</string>
-    <string name="phrase_eat">¿Dónde puedo comer?</string>
-    <string name="phrase_sleep">¿Dónde puedo dormir?</string>
+    <string name="phrase_thanks">Thank you</string>
+    <string name="phrase_welcome">You are welcome</string>
+    <string name="phrase_hello">Hello</string>
+    <string name="phrase_goodbye">Bye</string>
+    <string name="phrase_like">I like it</string>
+    <string name="phrase_dont_like">I don\'t like it</string>
+    <string name="phrase_love">I love it</string>
+    <string name="phrase_go">Let\'s go</string>
+    <string name="phrase_eat">Where can I eat?</string>
+    <string name="phrase_sleep">Where can I sleep?</string>
 
 </resources>

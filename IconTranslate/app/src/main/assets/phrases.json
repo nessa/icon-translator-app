@@ -1,0 +1,52 @@
+[
+    {
+        "sort_number": 1,
+        "category": "basic",
+        "code": "thanks"
+    },
+    {
+        "sort_number": 2,
+        "category": "basic",
+        "code": "welcome"
+    },
+    {
+        "sort_number": 3,
+        "category": "basic",
+        "code": "hello"
+    },
+    {
+        "sort_number": 4,
+        "category": "basic",
+        "code": "goodbye"
+    },
+    {
+        "sort_number": 5,
+        "category": "basic",
+        "code": "like"
+    },
+    {
+        "sort_number": 6,
+        "category": "basic",
+        "code": "dont_like"
+    },
+    {
+        "sort_number": 7,
+        "category": "basic",
+        "code": "love"
+    },
+    {
+        "sort_number": 8,
+        "category": "basic",
+        "code": "go"
+    },
+    {
+        "sort_number": 9,
+        "category": "survival",
+        "code": "eat"
+    },
+    {
+        "sort_number": 10,
+        "category": "survival",
+        "code": "sleep"
+    }
+]

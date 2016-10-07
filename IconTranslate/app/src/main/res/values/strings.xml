@@ -9,17 +9,25 @@
     <string name="category_all">All categories</string>
     <string name="category_basic">Basic conversation</string>
     <string name="category_survival">Survival</string>
+    <string name="category_emergency">Emergency</string>
 
     <!-- Phrases -->
-    <string name="phrase_thanks">Thank you</string>
-    <string name="phrase_welcome">You are welcome</string>
     <string name="phrase_hello">Hello</string>
-    <string name="phrase_goodbye">Bye</string>
+    <string name="phrase_thanks">Thank you</string>
     <string name="phrase_like">I like it</string>
     <string name="phrase_dont_like">I don\'t like it</string>
     <string name="phrase_love">I love it</string>
-    <string name="phrase_go">Let\'s go</string>
+
     <string name="phrase_eat">Where can I eat?</string>
     <string name="phrase_sleep">Where can I sleep?</string>
+    <string name="phrase_rest">Where can I rest?</string>
+    <string name="phrase_cash">Where can I find a cash machine?</string>
+    <string name="phrase_toilet">Where is the toilet?</string>
+    <string name="phrase_water">Is this water potable?</string>
+
+    <string name="phrase_help">Please, I need help.</string>
+    <string name="phrase_luggage">I lost my luggage.</string>
+    <string name="phrase_pharmacy">Where is the nearest pharmacy?</string>
+    <string name="phrase_hospital">Where is the nearest hospital?</string>
 
 </resources>

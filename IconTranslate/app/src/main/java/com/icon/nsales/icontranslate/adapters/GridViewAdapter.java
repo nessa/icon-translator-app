@@ -39,12 +39,14 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class VHItem extends RecyclerView.ViewHolder {
+        View view;
         @BindView(R.id.icon)
         public ImageView icon;
 
         public VHItem(View v) {
             super(v);
             ButterKnife.bind(this, v);
+            view = v;
         }
     }
 
@@ -99,23 +101,26 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof VHItem) {
-            VHItem itemHolder = (VHItem) holder;
+            final VHItem itemHolder = (VHItem) holder;
 
             Phrase presentPhrase = getItem(position);
 
-            itemHolder.icon.setTag(presentPhrase.getCode());
-            itemHolder.icon.setImageResource(R.drawable.ic_build_black_24dp);
+            itemHolder.icon.setImageResource(context.getIconResource(presentPhrase.getCode()));
 
-            itemHolder.icon.setOnClickListener(new View.OnClickListener() {
+            itemHolder.view.setTag(presentPhrase.getCode());
+
+            itemHolder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    view.setSelected(true);
                     context.speakPhrase((String) view.getTag());
                 }
             });
 
-            itemHolder.icon.setOnLongClickListener(new View.OnLongClickListener() {
+            itemHolder.view.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
+                    view.setSelected(true);
                     context.showPhrase((String) view.getTag());
                     return true;
                 }
@@ -132,7 +137,6 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             headerHolder.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    Log.d("GRID", "SELECT CATEGORY " + context.getCategories().get(position));
                     headerHolder.spinner.setSelection(position);
                     context.filterPhrases(position);
                 }

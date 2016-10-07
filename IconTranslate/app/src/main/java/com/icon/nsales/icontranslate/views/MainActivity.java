@@ -146,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
         return this.translatedLanguages;
     }
 
+    public int getIconResource(String code) {
+        return contextService.getIconResourceByName(code, this);
+    }
+
     public void calcTranslatedLanguages() {
         this.translatedLanguages = new ArrayList<>();
 

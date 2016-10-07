@@ -2,7 +2,9 @@ package com.icon.nsales.icontranslate.services;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import java.util.Locale;
 
@@ -25,7 +27,12 @@ public class ContextService {
     protected String getStringResourceByName(String aString, Context context) {
         String packageName = context.getPackageName();
         int resId = context.getResources().getIdentifier(aString, "string", packageName);
-        return context.getString(resId);
+        try {
+            return context.getString(resId);
+        } catch (Resources.NotFoundException e) {
+            Log.d("CONTEXT", "STRING NOT FOUND FOR "+aString);
+            return "";
+        }
     }
 
     @NonNull

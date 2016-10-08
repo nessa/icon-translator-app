@@ -2,6 +2,7 @@ package com.icon.nsales.icontranslate.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.icon.nsales.icontranslate.services.ContextService;
 import com.icon.nsales.icontranslate.services.DataService;
@@ -26,6 +27,12 @@ public class ApplicationModule {
     @Singleton
     Context provideApplicationContext() {
         return this.application;
+    }
+
+    @Provides
+    @Singleton
+    SharedPreferences provideSharedPreferences() {
+        return this.application.getSharedPreferences("preferences", 0);
     }
 
     @Provides

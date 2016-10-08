@@ -1,5 +1,6 @@
 package com.icon.nsales.icontranslate.views;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static String PREFERENCES_LANGUAGE_KEY = "selected-language";
+
     private ArrayList<Phrase> phrases;
     private ArrayList<String> categories;
     private ArrayList<String> languages;
@@ -47,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.grid_view)
     RecyclerView gridView;
 
+    @Inject
+    SharedPreferences preferences;
     @Inject
     DataService dataService;
     @Inject
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         categories = dataService.getCategories();
         languages = dataService.getLanguages(this);
 
-        selectedLanguage = languages.get(0);
+        selectedLanguage = preferences.getString(PREFERENCES_LANGUAGE_KEY, languages.get(0));
         lastCategoryIndex = 0;
     }
 
@@ -170,6 +175,10 @@ public class MainActivity extends AppCompatActivity {
     public void setLanguage(String language) {
         if (!language.equals(selectedLanguage)) {
             selectedLanguage = language;
+            SharedPreferences.Editor edit = preferences.edit();
+            edit.clear();
+            edit.putString(PREFERENCES_LANGUAGE_KEY, language);
+            edit.apply();
 
             MenuItem languageItem = menu.findItem(R.id.language);
             languageItem.setTitle(selectedLanguage);

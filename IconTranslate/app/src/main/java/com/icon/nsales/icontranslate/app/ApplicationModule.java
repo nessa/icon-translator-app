@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 import com.icon.nsales.icontranslate.services.ContextService;
 import com.icon.nsales.icontranslate.services.DataService;
+import com.icon.nsales.icontranslate.services.TextToSpeechService;
 
 import javax.inject.Singleton;
 
@@ -45,5 +46,11 @@ public class ApplicationModule {
     @Singleton
     ContextService provideContextService() {
         return new ContextService();
+    }
+
+    @Provides
+    @Singleton
+    TextToSpeechService provideTTSService() {
+        return new TextToSpeechService(this.application);
     }
 }

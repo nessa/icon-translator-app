@@ -18,6 +18,7 @@ import com.icon.nsales.icontranslate.adapters.GridViewAdapter;
 import com.icon.nsales.icontranslate.app.MyApplication;
 import com.icon.nsales.icontranslate.services.ContextService;
 import com.icon.nsales.icontranslate.services.DataService;
+import com.icon.nsales.icontranslate.services.TextToSpeechService;
 
 import java.util.ArrayList;
 
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     DataService dataService;
     @Inject
     ContextService contextService;
+    @Inject
+    TextToSpeechService ttsService;
 
     private Menu menu;
 
@@ -94,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
         phrases = dataService.getPhrases(categories.get(lastCategoryIndex));
         gridViewAdapter = new GridViewAdapter(this);
         gridView.setAdapter(gridViewAdapter);
+
+        ttsService.createOrUpdate(selectedLanguage);
+    }
+
+    @Override
+    protected void onStop() {
+        ttsService.stop();
+        super.onStop();
     }
 
     @Override
@@ -134,10 +145,6 @@ public class MainActivity extends AppCompatActivity {
         return this.phrases;
     }
 
-    public ArrayList<String> getCategories() {
-        return this.categories;
-    }
-
     public ArrayList<String> getLanguages() {
         return this.languages;
     }
@@ -175,10 +182,13 @@ public class MainActivity extends AppCompatActivity {
     public void setLanguage(String language) {
         if (!language.equals(selectedLanguage)) {
             selectedLanguage = language;
+
             SharedPreferences.Editor edit = preferences.edit();
             edit.clear();
-            edit.putString(PREFERENCES_LANGUAGE_KEY, language);
+            edit.putString(PREFERENCES_LANGUAGE_KEY, selectedLanguage);
             edit.apply();
+
+            ttsService.createOrUpdate(selectedLanguage);
 
             MenuItem languageItem = menu.findItem(R.id.language);
             languageItem.setTitle(selectedLanguage);
@@ -205,10 +215,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void speakPhrase(String phraseCode) {
-        // TODO: Use TTS to speak
-        Snackbar.make(layout, contextService.getPhraseStringByLanguage(phraseCode, this, selectedLanguage),
-            Snackbar.LENGTH_LONG)
-            .show();
+        ttsService.speak(contextService.getPhraseStringByLanguage(phraseCode, this, selectedLanguage));
     }
 
 }

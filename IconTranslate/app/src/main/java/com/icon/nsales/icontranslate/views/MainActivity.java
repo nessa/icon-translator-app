@@ -85,11 +85,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        GridLayoutManager mLayoutManager = new GridLayoutManager(this, 4);
+        GridLayoutManager mLayoutManager = new GridLayoutManager(this,
+                getResources().getInteger(R.integer.grid_columns));
         mLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return (position == 0) ? 4 : 1;
+                return (position == 0) ? getResources().getInteger(R.integer.grid_columns) : 1;
             }
         });
         gridView.setLayoutManager(mLayoutManager);

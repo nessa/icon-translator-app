@@ -1,186 +1,149 @@
 [
     {
-        "sort_number": 1,
         "category": "basic",
         "code": "hello"
     },
     {
-        "sort_number": 2,
         "category": "basic",
         "code": "thanks"
     },
     {
-        "sort_number": 3,
         "category": "basic",
         "code": "like"
     },
     {
-        "sort_number": 4,
         "category": "basic",
         "code": "dont_like"
     },
     {
-        "sort_number": 5,
         "category": "basic",
         "code": "love"
     },
     {
-        "sort_number": 6,
         "category": "survival",
         "code": "eat"
     },
     {
-        "sort_number": 7,
         "category": "survival",
         "code": "sleep"
     },
     {
-        "sort_number": 8,
         "category": "survival",
         "code": "rest"
     },
     {
-        "sort_number": 9,
         "category": "survival",
         "code": "cash"
     },
     {
-        "sort_number": 10,
         "category": "survival",
         "code": "toilet"
     },
     {
-        "sort_number": 11,
         "category": "survival",
         "code": "water"
     },
     {
-        "sort_number": 12,
         "category": "emergency",
         "code": "help"
     },
     {
-        "sort_number": 13,
         "category": "emergency",
         "code": "luggage"
     },
     {
-        "sort_number": 14,
         "category": "emergency",
         "code": "pharmacy"
     },
     {
-        "sort_number": 15,
         "category": "emergency",
         "code": "hospital"
     },
     {
-        "sort_number": 16,
         "category": "emergency",
         "code": "repair"
     },
     {
-        "sort_number": 17,
         "category": "technology",
         "code": "phone"
     },
     {
-        "sort_number": 18,
         "category": "technology",
         "code": "wifi"
     },
     {
-        "sort_number": 19,
         "category": "technology",
         "code": "coverage"
     },
     {
-        "sort_number": 20,
         "category": "technology",
         "code": "charge"
     },
     {
-        "sort_number": 21,
         "category": "leisure",
         "code": "drink"
     },
     {
-        "sort_number": 22,
         "category": "leisure",
         "code": "music"
     },
     {
-        "sort_number": 23,
         "category": "leisure",
         "code": "cafe"
     },
     {
-        "sort_number": 24,
         "category": "leisure",
         "code": "restaurant"
     },
     {
-        "sort_number": 25,
         "category": "leisure",
         "code": "mall"
     },
     {
-        "sort_number": 26,
         "category": "leisure",
         "code": "photo"
     },
     {
-        "sort_number": 27,
         "category": "transport",
         "code": "location"
     },
     {
-        "sort_number": 28,
         "category": "transport",
         "code": "parking"
     },
     {
-        "sort_number": 29,
         "category": "transport",
         "code": "taxi"
     },
     {
-        "sort_number": 30,
         "category": "transport",
         "code": "subway"
     },
     {
-        "sort_number": 31,
         "category": "transport",
         "code": "bike"
     },
     {
-        "sort_number": 32,
         "category": "transport",
         "code": "motorbike"
     },
     {
-        "sort_number": 33,
         "category": "transport",
         "code": "car"
     },
     {
-        "sort_number": 34,
         "category": "transport",
         "code": "bus"
     },
     {
-        "sort_number": 35,
         "category": "transport",
         "code": "train"
     },
     {
-        "sort_number": 36,
         "category": "transport",
         "code": "plane"
     },
     {
-        "sort_number": 37,
         "category": "transport",
         "code": "fuel"
     }

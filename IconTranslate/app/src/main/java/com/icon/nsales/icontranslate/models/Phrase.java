@@ -11,19 +11,16 @@ import java.text.ParseException;
 public class Phrase {
 
     private String mCode;
-    private Integer mSortNumber;
     private String mCategory;
 
-    public Phrase(String code, Integer sortNumber, String category) {
+    public Phrase(String code, String category) {
         this.mCode = code;
-        this.mSortNumber = sortNumber;
         this.mCategory = category;
     }
 
     public Phrase(JSONObject o) {
         try {
             this.mCode = o.getString("code");
-            this.mSortNumber = o.getInt("sort_number");
             this.mCategory = o.getString("category");
         } catch(JSONException e) {
             e.printStackTrace();
@@ -32,10 +29,6 @@ public class Phrase {
 
     public String getCode() {
         return mCode;
-    }
-
-    public Integer getSortNumber() {
-        return mSortNumber;
     }
 
     public String getCategory() {

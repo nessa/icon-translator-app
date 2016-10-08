@@ -79,7 +79,7 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public long getItemId(int position) {
-        return this.context.getPhrases().get(position - 1).getSortNumber();
+        return position - 1;
     }
 
 

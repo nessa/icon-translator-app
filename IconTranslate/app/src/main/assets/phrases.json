@@ -73,5 +73,115 @@
         "sort_number": 15,
         "category": "emergency",
         "code": "hospital"
+    },
+    {
+        "sort_number": 16,
+        "category": "emergency",
+        "code": "repair"
+    },
+    {
+        "sort_number": 17,
+        "category": "technology",
+        "code": "phone"
+    },
+    {
+        "sort_number": 18,
+        "category": "technology",
+        "code": "wifi"
+    },
+    {
+        "sort_number": 19,
+        "category": "technology",
+        "code": "coverage"
+    },
+    {
+        "sort_number": 20,
+        "category": "technology",
+        "code": "charge"
+    },
+    {
+        "sort_number": 21,
+        "category": "leisure",
+        "code": "drink"
+    },
+    {
+        "sort_number": 22,
+        "category": "leisure",
+        "code": "music"
+    },
+    {
+        "sort_number": 23,
+        "category": "leisure",
+        "code": "cafe"
+    },
+    {
+        "sort_number": 24,
+        "category": "leisure",
+        "code": "restaurant"
+    },
+    {
+        "sort_number": 25,
+        "category": "leisure",
+        "code": "mall"
+    },
+    {
+        "sort_number": 26,
+        "category": "leisure",
+        "code": "photo"
+    },
+    {
+        "sort_number": 27,
+        "category": "transport",
+        "code": "location"
+    },
+    {
+        "sort_number": 28,
+        "category": "transport",
+        "code": "parking"
+    },
+    {
+        "sort_number": 29,
+        "category": "transport",
+        "code": "taxi"
+    },
+    {
+        "sort_number": 30,
+        "category": "transport",
+        "code": "subway"
+    },
+    {
+        "sort_number": 31,
+        "category": "transport",
+        "code": "bike"
+    },
+    {
+        "sort_number": 32,
+        "category": "transport",
+        "code": "motorbike"
+    },
+    {
+        "sort_number": 33,
+        "category": "transport",
+        "code": "car"
+    },
+    {
+        "sort_number": 34,
+        "category": "transport",
+        "code": "bus"
+    },
+    {
+        "sort_number": 35,
+        "category": "transport",
+        "code": "train"
+    },
+    {
+        "sort_number": 36,
+        "category": "transport",
+        "code": "plane"
+    },
+    {
+        "sort_number": 37,
+        "category": "transport",
+        "code": "fuel"
     }
 ]

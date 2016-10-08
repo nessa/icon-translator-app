@@ -10,6 +10,9 @@
     <string name="category_basic">Basic conversation</string>
     <string name="category_survival">Survival</string>
     <string name="category_emergency">Emergency</string>
+    <string name="category_technology">Technology</string>
+    <string name="category_leisure">Leisure</string>
+    <string name="category_transport">Transport</string>
 
     <!-- Phrases -->
     <string name="phrase_hello">Hello</string>
@@ -29,5 +32,30 @@
     <string name="phrase_luggage">I lost my luggage.</string>
     <string name="phrase_pharmacy">Where is the nearest pharmacy?</string>
     <string name="phrase_hospital">Where is the nearest hospital?</string>
+    <string name="phrase_repair">Where can I repair this?</string>
+
+    <string name="phrase_phone">Where can I find a landline?</string>
+    <string name="phrase_wifi">Where can I find WiFi signal?</string>
+    <string name="phrase_coverage">Where is good mobile coverage?</string>
+    <string name="phrase_charge">Where can I charge mi phone?</string>
+
+    <string name="phrase_drink">Where can I have a drink?</string>
+    <string name="phrase_music">Where can I listen to music?</string>
+    <string name="phrase_cafe">Where is a local cafe?</string>
+    <string name="phrase_restaurant">Where is a good restaurant?</string>
+    <string name="phrase_mall">Where can I find a mall or somewhere to buy stuff?</string>
+    <string name="phrase_photo">Could you make me a photograph?</string>
+
+    <string name="phrase_location">How can I get to this place?</string>
+    <string name="phrase_parking">Where is a parking?</string>
+    <string name="phrase_taxi">Where is a cabstand?</string>
+    <string name="phrase_subway">Where is the nearest subway?</string>
+    <string name="phrase_bike">Where can I rent a bike?</string>
+    <string name="phrase_motorbike">Where can I rent a motorbike?</string>
+    <string name="phrase_car">Where can I rent a car?</string>
+    <string name="phrase_bus">Where is the nearest bus stop?</string>
+    <string name="phrase_train">Where is the train station?</string>
+    <string name="phrase_plane">Where is the airport?</string>
+    <string name="phrase_fuel">Where is the nearest gas station?</string>
 
 </resources>

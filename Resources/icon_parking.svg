@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   fill="#000000"
+   height="48"
+   viewBox="0 0 24 24"
+   width="48"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icon_parking.svg"
+   inkscape:export-filename="/home/nessa/Proyectos/icon-translator-app/Resources/drawable-xxxhdpi/icon_parking.png"
+   inkscape:export-xdpi="360"
+   inkscape:export-ydpi="360">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1375"
+     inkscape:window-height="876"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="23.79661"
+     inkscape:cy="48.40678"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     style="fill:#5069fd;fill-opacity:1"
+     d="M 12.203125 4.7792969 C 9.3861758 4.7792969 7.1191406 7.0482852 7.1191406 9.8652344 L 7.1191406 38.134766 C 7.1191406 40.951715 9.3861758 43.220703 12.203125 43.220703 L 35.796875 43.220703 C 38.613824 43.220703 40.880859 40.951715 40.880859 38.134766 L 40.880859 9.8652344 C 40.880859 7.0482852 38.613824 4.7792969 35.796875 4.7792969 L 12.203125 4.7792969 z M 14.050781 10.224609 L 24.765625 10.224609 C 29.832041 10.224609 33.949219 14.341788 33.949219 19.408203 C 33.949219 24.474618 29.832041 28.591797 24.765625 28.591797 L 20.173828 28.591797 L 20.173828 37.775391 L 14.050781 37.775391 L 14.050781 10.224609 z M 20.173828 16.347656 L 20.173828 22.46875 L 25.072266 22.46875 C 26.75597 22.46875 28.132812 21.091905 28.132812 19.408203 C 28.132812 17.724501 26.75597 16.347656 25.072266 16.347656 L 20.173828 16.347656 z "
+     transform="scale(0.5,0.5)"
+     id="rect4140" />
+  <path
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path4" />
+</svg>

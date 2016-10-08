@@ -10,6 +10,9 @@
     <string name="category_basic">Conversación básica</string>
     <string name="category_survival">Supervivencia</string>
     <string name="category_emergency">Emergencia</string>
+    <string name="category_technology">Tecnología</string>
+    <string name="category_leisure">Ocio</string>
+    <string name="category_transport">Transporte</string>
 
     <!-- Phrases -->
     <string name="phrase_hello">Hola</string>
@@ -29,5 +32,30 @@
     <string name="phrase_luggage">He perdido mi equipaje.</string>
     <string name="phrase_pharmacy">¿Dónde está la farmacia más cercana?</string>
     <string name="phrase_hospital">¿Dónde está el hospital más cercano?</string>
+    <string name="phrase_repair">¿Dónde puedo reparar este objeto?</string>
+
+    <string name="phrase_phone">¿Dónde puedo encontrar un teléfono fijo?</string>
+    <string name="phrase_wifi">¿Dónde puedo encontrar WiFi?</string>
+    <string name="phrase_coverage">¿Dónde hay buena cobertura móvil?</string>
+    <string name="phrase_charge">¿Dónde puedo cargar mi móvil?</string>
+
+    <string name="phrase_drink">¿Dónde puedo tomar algo?</string>
+    <string name="phrase_music">¿Dónde puedo escuchar música?</string>
+    <string name="phrase_cafe">¿Dónde hay una cafetería?</string>
+    <string name="phrase_restaurant">¿Dónde hay un buen restaurante?</string>
+    <string name="phrase_mall">¿Dónde puedo encontrar un centro comercial o algún sitio para comprar?</string>
+    <string name="phrase_photo">¿Puede hacerme una fotografía?</string>
+
+    <string name="phrase_location">¿Cómo puedo llegar a este sitio?</string>
+    <string name="phrase_parking">¿Dónde hay un aparcamiento?</string>
+    <string name="phrase_taxi">¿Dónde hay una parada de taxis?</string>
+    <string name="phrase_subway">¿Dónde está el metro más cercano?</string>
+    <string name="phrase_bike">¿Dónde puedo alquilar una bicicleta?</string>
+    <string name="phrase_motorbike">¿Dónde puedo alquilar una motocicleta?</string>
+    <string name="phrase_car">¿Dónde puedo alquilar un coche?</string>
+    <string name="phrase_bus">¿Dónde está la parada de autobús más cercana?</string>
+    <string name="phrase_train">¿Dónde está la estación de tren?</string>
+    <string name="phrase_plane">¿Dónde está el aeropuerto?</string>
+    <string name="phrase_fuel">¿Dónde hay una gasolinera?</string>
 
 </resources>

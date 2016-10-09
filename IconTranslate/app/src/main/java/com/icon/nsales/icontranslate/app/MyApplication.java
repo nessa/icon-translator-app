@@ -2,12 +2,11 @@ package com.icon.nsales.icontranslate.app;
 
 import android.app.Application;
 
-import com.icon.nsales.icontranslate.app.DaggerApplicationComponent;
-import com.icon.nsales.icontranslate.app.ApplicationComponent;
-import com.icon.nsales.icontranslate.app.ApplicationModule;
-
 /**
- * Created by nsales on 7/10/16.
+ * My application class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * Needed to use Dagger dependency injection.
  */
 public class MyApplication extends Application {
     private ApplicationComponent mComponent;

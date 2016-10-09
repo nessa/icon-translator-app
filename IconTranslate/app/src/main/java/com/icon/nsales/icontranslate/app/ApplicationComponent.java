@@ -9,7 +9,10 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
- * Created by nsales on 7/10/16.
+ * Dagger component class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * Needed to use Dagger dependency injection.
  */
 @Singleton // Constraints this component to one-per-application or unscoped bindings.
 @Component(modules = ApplicationModule.class)

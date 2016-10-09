@@ -7,16 +7,15 @@ import android.speech.tts.TextToSpeech;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 
-import com.icon.nsales.icontranslate.app.MyApplication;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-import javax.inject.Inject;
-
 /**
- * Created by nessa on 8/10/16.
+ * Text to speech service class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * Needed to create a new TTS service and make the TTS translate to voice.
  */
 public class TextToSpeechService {
 
@@ -26,11 +25,19 @@ public class TextToSpeechService {
 
     private boolean ready;
 
+    /**
+     * Constructor.
+     * @param context Needed to create the TTS
+     */
     public TextToSpeechService(Context context) {
         this.context = context;
         this.ready = false;
     }
 
+    /**
+     * Create new TTS or update its locale if it's created.
+     * @param language Language code to set as TTS locale
+     */
     public void createOrUpdate(final String language) {
         if (mTTS == null) {
             mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
@@ -50,6 +57,9 @@ public class TextToSpeechService {
         }
     }
 
+    /**
+     * Shutdown the TTS if it's not undefined.
+     */
     public void stop() {
         if (mTTS != null) {
             mTTS.shutdown();
@@ -58,10 +68,18 @@ public class TextToSpeechService {
         }
     }
 
+    /**
+     * Return a boolean that indicates if the TTS is ready to speak.
+     * @return Boolean
+     */
     public boolean isReady() {
         return ready;
     }
 
+    /**
+     * Translate the given text to voice use TTS methods.
+     * @param text Text to translate
+     */
     @SuppressWarnings("deprecation")
     public void speak(String text) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -74,7 +92,12 @@ public class TextToSpeechService {
     }
 
     /**
-     * Check if user needs to download language packages
+     * Check if user needs to download language packages. If so, call an intent to show the
+     * download view. Otherwise, show a snack bar message.
+     * @param language Language code
+     * @param country Country code
+     * @param layout Layout in which show the snack bar
+     * @param message Message to show in the snack bar
      */
     public void downloadLanguagePackages(final String language, final String country,
                                          final CoordinatorLayout layout, final String message) {

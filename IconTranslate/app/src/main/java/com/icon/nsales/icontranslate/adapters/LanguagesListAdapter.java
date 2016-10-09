@@ -14,7 +14,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by nsales on 6/10/16.
+ * Languages list item adapter class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * It declares the view of each language list cells that contains a language name.
+ *
+ * Related layouts:
+ * - ViewHolder: dialog_languages_item.xml
  */
 public class LanguagesListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

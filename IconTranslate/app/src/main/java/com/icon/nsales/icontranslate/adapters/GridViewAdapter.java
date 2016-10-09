@@ -2,7 +2,6 @@ package com.icon.nsales.icontranslate.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by nsales on 5/10/16.
+ * Grid view cell adapter class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * It declares the view of each grid view cells that contains an icon.
+ *
+ * Related layouts:
+ * - VHHeader: grid_header.xml
+ * - VHItem: grid_item.xml
  */
 public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -98,6 +104,11 @@ public class GridViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return null;
     }
 
+    /**
+     * Replace the contents of a view (invoked by the layout manager)
+     * @param holder View holder
+     * @param position Position of this view in the grid view
+     */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof VHItem) {

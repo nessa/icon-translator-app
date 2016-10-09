@@ -9,13 +9,18 @@ import android.view.Window;
 import com.icon.nsales.icontranslate.R;
 import com.icon.nsales.icontranslate.adapters.LanguagesListAdapter;
 
-import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by nsales on 6/10/16.
+ * Languages dialog class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * It contains a list with all languages to let the user select one or more.
+ *
+ * Layouts:
+ * - dialog_languages.xml
+ * - dialog_languages_item.xml
  */
 public class LanguagesDialog extends Dialog {
 
@@ -30,7 +35,7 @@ public class LanguagesDialog extends Dialog {
      *
      * @param context Application context
      */
-    public LanguagesDialog(final Context context, ArrayList<String> languages) {
+    public LanguagesDialog(final Context context) {
         super(context);
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);

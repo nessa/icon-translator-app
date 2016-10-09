@@ -15,7 +15,10 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Created by nsales on 7/10/16.
+ * Dagger module class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * Needed to use Dagger dependency injection. It provides all services.
  */
 @Module
 public class ApplicationModule {

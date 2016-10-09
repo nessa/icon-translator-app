@@ -6,12 +6,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Created by nessa on 9/10/16.
+ * Locale service class.
+ * Author: Noelia Sales Montes, noelia.salesmontes <at> gmail.com
+ *
+ * Needed to get country the associated to a given language code.
  */
 public class LocaleService {
 
     // Locale data
-    private static ArrayList<Pair<String, String>> LOCALE_COUNTRIES = new ArrayList<>(Arrays.asList(
+    private ArrayList<Pair<String, String>> LOCALE_COUNTRIES = new ArrayList<>(Arrays.asList(
             new Pair<>("es", "ES"),
             new Pair<>("en", "US"),
             new Pair<>("fr", "FR")

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Icon translate</string>
+    <!-- App -->
+    <string name="app_name">IconTranslate</string>
+    <string name="tts_service_not_ready">El servicio de voz no está disponible todavía.</string>
 
     <!-- Languages -->
     <string name="language_en">Inglés</string>

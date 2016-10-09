@@ -216,7 +216,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void speakPhrase(String phraseCode) {
-        ttsService.speak(contextService.getPhraseStringByLanguage(phraseCode, this, selectedLanguage));
+        if (ttsService.isReady()) {
+            ttsService.speak(contextService.getPhraseStringByLanguage(phraseCode, this,
+                    selectedLanguage));
+        } else {
+            Snackbar.make(layout, getString(R.string.tts_service_not_ready),
+                    Snackbar.LENGTH_LONG)
+                    .show();
+        }
     }
 
 }

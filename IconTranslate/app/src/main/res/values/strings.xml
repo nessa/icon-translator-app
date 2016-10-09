@@ -1,5 +1,7 @@
 <resources>
+    <!-- App -->
     <string name="app_name">IconTranslate</string>
+    <string name="tts_service_not_ready">Text to speech service not ready yet.</string>
 
     <!-- Languages -->
     <string name="language_en">English</string>

@@ -15,8 +15,11 @@ public class TextToSpeechService {
     private TextToSpeech mTTS;
     private Context context;
 
+    private boolean ready;
+
     public TextToSpeechService(Context context) {
         this.context = context;
+        this.ready = false;
     }
 
     public void createOrUpdate(final String language) {
@@ -27,12 +30,14 @@ public class TextToSpeechService {
                     if (status != TextToSpeech.ERROR) {
                         Locale loc = new Locale(language);
                         mTTS.setLanguage(loc);
+                        ready = true;
                     }
                 }
             });
         } else {
             Locale loc = new Locale(language);
             mTTS.setLanguage(loc);
+            ready = true;
         }
     }
 
@@ -40,7 +45,12 @@ public class TextToSpeechService {
         if (mTTS != null) {
             mTTS.shutdown();
             mTTS = null;
+            ready = false;
         }
+    }
+
+    public boolean isReady() {
+        return ready;
     }
 
     @SuppressWarnings("deprecation")

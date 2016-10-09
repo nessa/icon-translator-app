@@ -1,11 +1,14 @@
 <resources>
     <!-- App -->
     <string name="app_name">IconTranslate</string>
+    <string name="menu_item_download_language">Descargar paquete de idioma</string>
+    <string name="language_package_installed">El paquete de idioma (%1$s) ya está instalado.</string>
     <string name="tts_service_not_ready">El servicio de voz no está disponible todavía.</string>
 
     <!-- Languages -->
     <string name="language_en">Inglés</string>
     <string name="language_es">Español</string>
+    <string name="language_fr">Francés</string>
 
     <!-- Categories -->
     <string name="category_all">Todas las categorías</string>

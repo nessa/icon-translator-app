@@ -1,0 +1,66 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">IconTranslate</string>
+    <string name="menu_item_download_language">Télécharger paquet de langue</string>
+    <string name="language_package_installed">L\'ensemble de langues (%1$s) déjà installé.</string>
+    <string name="tts_service_not_ready">Voix service pas encore prêt.</string>
+
+    <!-- Languages -->
+    <string name="language_en">Anglais</string>
+    <string name="language_es">Espagnol</string>
+    <string name="language_fr">Français</string>
+
+    <!-- Categories -->
+    <string name="category_all">Toutes les catégories</string>
+    <string name="category_basic">Conversation de base</string>
+    <string name="category_survival">Survie</string>
+    <string name="category_emergency">Urgence</string>
+    <string name="category_technology">Technologie</string>
+    <string name="category_leisure">Loisir</string>
+    <string name="category_transport">Transport</string>
+
+    <!-- Phrases -->
+    <string name="phrase_hello">Salut</string>
+    <string name="phrase_thanks">Merci beaucoup</string>
+    <string name="phrase_like">Je l\'aime</string>
+    <string name="phrase_dont_like">Je n\'aime pas</string>
+    <string name="phrase_love">Je l\'adore</string>
+
+    <string name="phrase_eat">Où puis-je manger?</string>
+    <string name="phrase_sleep">Où puis-je dormir?</string>
+    <string name="phrase_rest">Où puis-je reposer?</string>
+    <string name="phrase_cash">Où puis-je trouver un distributeur de billets?</string>
+    <string name="phrase_toilet">Où sont les toilettes?</string>
+    <string name="phrase_water">Est-ce l\'eau potable?</string>
+
+    <string name="phrase_help">S\'il vous plaît, je besoin d\'aide.</string>
+    <string name="phrase_luggage">J\'ai perdu mes bagages.</string>
+    <string name="phrase_pharmacy">Où est la pharmacie la plus proche?</string>
+    <string name="phrase_hospital">Où se trouve l\'hôpital le plus proche?</string>
+    <string name="phrase_repair">Où puis-je réparer cet objet?</string>
+
+    <string name="phrase_phone">Où puis-je trouver un téléphone fixe?</string>
+    <string name="phrase_wifi">Où puis-je trouver le WiFi?</string>
+    <string name="phrase_coverage">Où il y a une bonne couverture mobile?</string>
+    <string name="phrase_charge">Où je peux recharger mon téléphone?</string>
+
+    <string name="phrase_drink">Où je peux obtenir quelque chose à boire?</string>
+    <string name="phrase_music">Où je peux écouter de la musique?</string>
+    <string name="phrase_cafe">Où il y a un café?</string>
+    <string name="phrase_restaurant">Où est un bon restaurant?</string>
+    <string name="phrase_mall">Où puis-je trouver un centre commercial ou un endroit pour acheter?</string>
+    <string name="phrase_photo">Pouvez-vous me faire une photo?</string>
+
+    <string name="phrase_location">Comment puis-je arriver à cet endroit?</string>
+    <string name="phrase_parking">Où est-il un parking?</string>
+    <string name="phrase_taxi">Où il y a une station de taxis?</string>
+    <string name="phrase_subway">Où est le métro le plus proche?</string>
+    <string name="phrase_bike">Où puis-je louer un vélo?</string>
+    <string name="phrase_motorbike">Où puis-je louer une moto?</string>
+    <string name="phrase_car">Où puis-je louer une voiture?</string>
+    <string name="phrase_bus">Où est le bus le plus proche?</string>
+    <string name="phrase_train">Où est la gare?</string>
+    <string name="phrase_plane">Où est l\'aéroport?</string>
+    <string name="phrase_fuel">Où il y a une station d\'essence?</string>
+
+</resources>

@@ -18,6 +18,7 @@ import com.icon.nsales.icontranslate.adapters.GridViewAdapter;
 import com.icon.nsales.icontranslate.app.MyApplication;
 import com.icon.nsales.icontranslate.services.ContextService;
 import com.icon.nsales.icontranslate.services.DataService;
+import com.icon.nsales.icontranslate.services.LocaleService;
 import com.icon.nsales.icontranslate.services.TextToSpeechService;
 
 import java.util.ArrayList;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     ContextService contextService;
     @Inject
     TextToSpeechService ttsService;
+    @Inject
+    LocaleService localeService;
 
     private Menu menu;
 
@@ -128,6 +131,10 @@ public class MainActivity extends AppCompatActivity {
                 languagesDialog = new LanguagesDialog(this, languages);
                 languagesDialog.show();
                 return true;
+            case R.id.downloadLanguagePackage:
+                ttsService.downloadLanguagePackages(selectedLanguage,
+                        localeService.getLocaleCountryFromCode(selectedLanguage), layout,
+                        String.format(getString(R.string.language_package_installed), selectedLanguage));
             default:
                 return super.onOptionsItemSelected(item);
         }
